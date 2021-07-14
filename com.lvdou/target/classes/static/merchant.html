@@ -1,0 +1,60 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<script>
+	$(function() {
+		$(".blue-class").css({
+			'background-color' : '#07c160'
+		});
+		$("h1").css({
+			'color' : 'white'
+		});
+		$("a").css({
+			'color' : 'white'
+		});
+	});
+</script>
+
+<body>
+	<div data-role="page">
+		<div data-role="header" class="blue-class">
+			<h1>商户</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="order.html" data-ajax="false"> <img
+						src="img/boc.jpeg">
+				</a></li>
+				<li><a href="order.html" data-ajax="false"> <img
+						src="img/jingdong.jpeg">
+				</a></li>
+				<li><a href="order.html" data-ajax="false"> <img
+						src="img/meituan.jpeg">
+				</a></li>
+				<li><a href="order.html" data-ajax="false"> <img
+						src="img/tianmao.jpeg">
+				</a></li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="footernav"
+			data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" class="blue-class" data-ajax="false">账户</a></li>
+					<li><a href="transer.html" class="blue-class"
+						data-ajax="false">转豆</a></li>
+					<li><a href="merchant.html" class="blue-class"
+						data-ajax="false" class="ui-btn-active" class="blue-class">商户</a></li>
+					<li><a href="order.html" class="blue-class" data-ajax="false">订单</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>

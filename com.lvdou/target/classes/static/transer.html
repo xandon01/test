@@ -1,0 +1,81 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<script>
+	$(function() {
+		$(".blue-class").css({
+			'background-color' : '#07c160'
+		});
+		$("h1").css({
+			'color' : 'white'
+		});
+		$("a").css({
+			'color' : 'white'
+		});
+		
+		$.ajax({
+			url : "./transerInit",
+			dataType : "text",
+			success : function(result) {
+				$("#pay").val(result); //腐都人
+			}
+		});
+	});
+
+	function transer() {
+		var rec = $("#rec").val();
+		var amt = $("#amt").val();
+		$.ajax({
+			url : "./transer",
+			data : {
+				"rec" : rec,
+				"amt" : amt
+			},
+			dataType : "text",
+			success : function(result) {
+				if (result == 'ok') {
+					//alert("转豆成功");
+				} else {
+					alert("转豆失败");
+				}
+			}
+		});
+	}
+</script>
+
+<body>
+	<div data-role="page">
+		<div data-role="header"  class="blue-class">
+			<h1>转豆</h1>
+		</div>
+
+
+		<div data-role="main" class="ui-content">
+
+			<form method="post">
+				<input type="text" name="pay" id="pay" placeholder="付豆人"> <input
+					type="text" name="rec" id="rec" placeholder="收豆人"> <input
+					type="text" name="amt" id="amt" placeholder="绿豆">
+			</form>
+		</div>
+
+		<a href="#" class="blue-class" data-role="button" data-mini="true" onclick="transer();">转豆</a>
+
+		<div data-role="footer" data-position="fixed" data-id="footernav"
+			data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html"  class="blue-class" data-ajax="false">账户</a></li>
+					<li><a href="transer.html"  class="blue-class" data-ajax="false" class="ui-btn-active">转豆</a></li>
+					<li><a href="merchant.html"  class="blue-class" data-ajax="false" >商户</a></li>
+					<li><a href="order.html"  class="blue-class" data-ajax="false">订单</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>

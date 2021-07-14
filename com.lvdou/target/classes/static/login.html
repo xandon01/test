@@ -1,0 +1,61 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<script>
+	$(function() {
+		$(".blue-class").css({
+			'background-color' : '#07c160'
+		});
+		$("h1").css({
+			'color' : 'white'
+		});
+		$("a").css({
+			'color' : 'white'
+		});
+	});
+
+	function loginSubmit() {
+		var phone = $("#phone").val();
+		$.ajax({
+			url : "./loginSubmit",
+			data : {
+				"phone" : phone
+			},
+			dataType : "text",
+			success : function(result) {
+				if (result == 'ok') {
+					$(window).attr('location', 'index.html');
+				} else {
+					alert("登录失败");
+				}
+			}
+		});
+	}
+</script>
+
+<body>
+	<div data-role="page">
+		<div data-role="header" class="blue-class">
+			<h1>
+				<font>绿豆-登录</font>
+			</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form method="post">
+				<input type="text" name="phone" id="phone" placeholder="手机号">
+				<input type="text" name="vcode" id="vcode" placeholder="验证码">
+			</form>
+		</div>
+
+		<a href="#" data-role="button" data-mini="true" class="blue-class"
+			onclick="loginSubmit();" class="blue-class">登录</a>
+	</div>
+
+</body>

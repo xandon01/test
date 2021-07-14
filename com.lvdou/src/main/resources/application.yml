@@ -1,0 +1,21 @@
+server:
+  port: 9000
+  servlet:
+          context-path: /lvdou
+logging:
+  level:
+    root: info
+  path: e:/logs          
+  
+spring:
+   redis:
+    host: 192.168.188.126
+    port: 6379
+    password: password01!
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+        timeout: 1200

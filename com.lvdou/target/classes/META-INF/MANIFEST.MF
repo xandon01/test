@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: com.ludou
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: lwb3372
+Implementation-Vendor-Id: com.ludou
+Build-Jdk: 1.8.0_152
+Implementation-URL: http://www.example.com
+Created-By: Maven Integration for Eclipse
+
